@@ -31,6 +31,7 @@ function collatzConjecture(x){
         }
         console.log(nums);
         addToTable(nums);
+        addToGraph(nums);
     }
 }
 
@@ -61,6 +62,28 @@ function addToTable(nums){
         </tr>
         `
     });
+}
+
+var chart;
+
+function addToGraph(nums){
+    if(chart) chart.destroy();
+    
+    chart = new Chart(
+        document.getElementById('graph'),
+        {
+            type: 'line',
+            data: {
+                labels: nums.map((num, index) => index+1),
+                datasets: [
+                    {
+                        label: "Numbers",
+                        data: nums
+                    }
+                ]
+            }
+        }
+    )
 }
 
 const randomNumButton = document.getElementById('random_num');

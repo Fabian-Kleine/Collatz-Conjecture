@@ -16,7 +16,7 @@ function collatzConjecture(x){
         showError("x is not defined")
     }else{
         var nums = [x];
-        while(x != 1 || x != 0){
+        while(x != 1 && x != 0){
             if(x == 1 || x == 0){
                 break
             }

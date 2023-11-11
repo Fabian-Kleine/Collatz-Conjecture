@@ -10,7 +10,7 @@ calcButton.addEventListener('click',function(){
 
 function collatzConjecture(x){
     showError("")
-    if(x<0){
+    if(x<0 || checkIfDecimal(x)){
         showError("x can only be a natural number")
     }else if(x == ""){
         showError("x is not defined")
@@ -37,6 +37,10 @@ function collatzConjecture(x){
 
 function checkIfOdd(num){
     return num % 2;
+}
+
+function checkIfDecimal(num){
+    return num % 1 != 0;
 }
 
 const tableInputNumber = document.getElementById('table_input-number'); 
